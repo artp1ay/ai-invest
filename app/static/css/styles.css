@@ -1,0 +1,50 @@
+body {
+    background-color: #F1F1EF;
+}
+.warning {
+    color: #C4554D;
+}
+.error-message {
+    background-color: #C4554D;
+    color: #ffffff;
+    padding: 5px 10px;
+}
+.main-container {
+    max-width: 1000px;
+    min-width: 800px;
+    border: 2px solid black;
+    background: #ffffff url('../img/robot.svg') bottom right no-repeat;
+    background-size: contain;
+}
+.ticker {
+    background-color: #000000;
+    color: #fffff;
+    border-radius: 0;
+    font-size: 1.3rem;
+    font-weight: 100;
+    cursor: pointer;
+    font-family: monospace;
+}
+input {
+    border-radius: 0;
+    border: 2px solid #000000;
+    padding: 10px 20px;
+    font-size: 1.3rem;
+    width: 100%;
+}
+button {
+    border-radius: 0;
+    border: 2px solid #000000;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 1.3rem;
+}
+.popular {
+    background: #F0F0F0;
+}
+.form-select {
+    height: 55px;
+    border-radius: 0;
+    border: 2px solid #000000;
+}

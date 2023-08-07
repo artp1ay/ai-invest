@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+  app:
+    container_name: ${PROJECT_NAME}-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - ${PORT}:5000
+    volumes:
+      - ./data/${DATABASE_FILE}:/app/${DATABASE_FILE}
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - TINKOFF_INVEST_API_KEY=${TINKOFF_INVEST_API_KEY}
+      - PREDICTION_TTL=${PREDICTION_TTL}
+      - DEBUG=${DEBUG}
+      - DATABASE_FILE=${DATABASE_FILE}
+      - REDIS_HOST=${REDIS_HOST}
+      - REDIS_PORT=${REDIS_PORT}
+    depends_on:
+      - redis
+    networks:
+      - invest
+
+  redis:
+    image: redis:latest
+    container_name: ${PROJECT_NAME}-redis
+    ports:
+      - 6379:6379
+    networks:
+      - invest
+
+networks:
+  invest:
